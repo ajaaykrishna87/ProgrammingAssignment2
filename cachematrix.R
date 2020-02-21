@@ -10,7 +10,11 @@ makeCacheMatrix <- function(x = matrix()) {
 		m<<-NULL
 	}
 	get<-function()x
+<<<<<<< Updated upstream
 	setInverse<-function(i) inverse<-i
+=======
+	setInverse<-function(y) inverse<-i
+>>>>>>> Stashed changes
 	getInverse<-function() inverse
 	list(set=set,get=get,
 		setInverse=setInverse,
@@ -27,8 +31,14 @@ cacheSolve <- function(x, ...) {
         	message("getting cached inverse")
         	return(inverse)
         }
+<<<<<<< Updated upstream
         data<-x$get()
         inverse<-solve(data,...)
         x$setInverse(inverse)
+=======
+        data<-x@get()
+        inverse<-solve(data,...)
+        x%setInverse(inverse)
+>>>>>>> Stashed changes
         inverse
 }
